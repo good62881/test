@@ -42,10 +42,10 @@ var mySwiper = new Swiper ('.swiper-container', {
     }
 });
 
-$('.p7 input').focus(function(){
+$('.p7 input,.p7 textarea').focus(function(){
 	mySwiper.detachEvents();
 });
-$('.p7 input').blur(function(){
+$('.p7 input,.p7 textarea').blur(function(){
 	mySwiper.attachEvents();
 });
 
