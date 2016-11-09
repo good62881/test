@@ -33,6 +33,7 @@ $(function() {
 //初始化
 var mySwiper = new Swiper ('.swiper-container', {
 	direction: 'vertical',
+	noSwiping : true,
 	onSlideChangeEnd: function(swiper){
 		if(swiper.activeIndex==6){
 			$(".array").hide();
@@ -42,8 +43,5 @@ var mySwiper = new Swiper ('.swiper-container', {
     }
 });
 
-$('.p7 input:text').focus(function(){
-	mySwiper.update();
-});
 
 });
