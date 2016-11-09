@@ -45,5 +45,9 @@ var mySwiper = new Swiper ('.swiper-container', {
 $('.p7 input').focus(function(){
 	mySwiper.detachEvents();
 });
+$('.p7 input').blur(function(){
+	mySwiper.attachEvents();
+});
+
 
 });
