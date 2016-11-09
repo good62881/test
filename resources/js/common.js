@@ -49,12 +49,6 @@ $('.p7 input,.p7 textarea').blur(function(){
 	mySwiper.attachEvents();
 });
 
-$('.p7 textarea').focus(function(){
-	mySwiper.detachEvents();
-});
-$('.p7 textarea').blur(function(){
-	mySwiper.attachEvents();
-});
 
 
 });
