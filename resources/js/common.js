@@ -35,12 +35,15 @@ var mySwiper = new Swiper ('.swiper-container', {
 	direction: 'vertical',
 	onSlideChangeEnd: function(swiper){
 		if(swiper.activeIndex==6){
-			$(".array").hide()
+			$(".array").hide();
 		}else{
-			$(".array").show()
+			$(".array").show();
 		}
     }
-})
+});
 
+$('.p7 input:text').focus(function(){
+	mySwiper.update();
+});
 
 });
