@@ -26,7 +26,9 @@ if (window.Notification) {
     };
     
     button.onclick = function() {
-            popNotice();
+        Notification.requestPermission(function (permission) {
+          popNotice();
+        });
     };
 } else {
     alert('浏览器不支持Notification');    
