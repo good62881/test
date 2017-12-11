@@ -20,6 +20,7 @@ if (window.Notification) {
             
             notification.onclick = function() {
                 location = 'http://www.baidu.com';
+                window.focus();
                 notification.close();    
             };
         }    
