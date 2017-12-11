@@ -29,8 +29,8 @@ if (window.Notification) {
         if (Notification.permission == "granted") {
             popNotice();
         } else if (Notification.permission != "denied") {
-            Notification.requestPermission(function (permission) {
-              popNotice();
+            Notification.requestPermission().then(function(result) {
+                popNotice();
             });
         }
     };
