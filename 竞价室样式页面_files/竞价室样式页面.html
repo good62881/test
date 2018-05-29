@@ -1,0 +1,1023 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<!-- base href="http://m.ztwz.com/" -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<title>竞价室样式页面</title>
+<link href="%E7%AB%9E%E4%BB%B7%E5%AE%A4%E6%A0%B7%E5%BC%8F%E9%A1%B5%E9%9D%A2_files/bidRoom.css" type="text/css" rel="stylesheet">
+
+<script language="javascript">
+	var roomID = "20100924195110";					
+	var roomName = "招标室2";				
+	var roomStatus = "10"; 		
+	var loginUnitType = "03";	
+	var loginUnitCode = "MA3XE5QK-101";	
+	var loginUserName = "洛阳金垚";	
+	var currentProjID = "OF002018051100378805";//当前开启项目id
+	var currentProjStatus ="13"; //当前开启项目状态
+	var currentProjBidType = "2";//当前开启项目名称
+	var currentProjName = "物资供应总段“2018年废钢屑（新乡地区）”网上竞卖";//当前开启项目竞标类型(竞买/竞卖)
+	var currentPackPayType = "";//当前开启包件竞价模式
+	var loginType = null;
+	var ale = "局纪委（监察处）提示：参与竞价单位及主办方要严格执行有关规定，严格执行竞价工作程序和竞价工作纪律，杜绝暗箱操作和权钱交易，局纪委将对在竞价过程中出现的违法违纪问题按规定严肃查处。";
+</script>
+<script type="text/javascript" src="%E7%AB%9E%E4%BB%B7%E5%AE%A4%E6%A0%B7%E5%BC%8F%E9%A1%B5%E9%9D%A2_files/bidRoom.js">  </script>
+<script type="text/javascript" src="%E7%AB%9E%E4%BB%B7%E5%AE%A4%E6%A0%B7%E5%BC%8F%E9%A1%B5%E9%9D%A2_files/engine.js"></script>
+<script type="text/javascript" src="%E7%AB%9E%E4%BB%B7%E5%AE%A4%E6%A0%B7%E5%BC%8F%E9%A1%B5%E9%9D%A2_files/util.js"></script>
+<script type="text/javascript" src="%E7%AB%9E%E4%BB%B7%E5%AE%A4%E6%A0%B7%E5%BC%8F%E9%A1%B5%E9%9D%A2_files/bidRoomBaseFixHeight.js"></script>
+<style type="text/css">
+.messageAlertWinStyle{width:300px;height:240px;display: block;position: absolute;top: 200px;left: 300px;border: 1px solid #c40000;background:white;}
+.messageAlertWinStyle div ol{list-style: decimal;margin: 0px;padding: 0px;list-style-position: inside;}
+.messageAlertWinStyle div ol li{list-style: decimal;list-style-position: inside;line-height: 20px;font-size: 13px;text-indent: 5px;}
+</style>
+</head>
+<body style="width:98%;height:100%;overflow: hidden;margin-left: 1%;" onload="init();" onunload="">
+<bgsound loop="1" id="bgs">
+<bgsound id="errorSndId" loop="0" src="">
+<input name="waitTime" value="" type="hidden">
+
+<div id="bidRoomMain" class="bidRoomMain" style="height: 738px;">
+	
+	<div class="bidRoomTop">
+		<div class="bidTitleInfos">
+			项目名称：物资供应总段“2018年废钢屑（新乡地区）”网上竞卖 |
+			项目编号：OF002018051100378805
+		</div>
+		<div class="bidUserInfos">
+			当前用户：洛阳金垚
+		</div>
+	</div>
+	
+	<div class="bidRoomContents" id="bidRoomContentsId">
+		<div class="roomL">
+			<div class="room_packs" id="room_packs_id" style="height: 410px;">
+				<div class="title">
+					<a class="title_a">包件信息</a>
+				</div>
+				<div class="roomPacksLists contents" id="room_packs_list_id">
+					<ul class="bidList">
+								
+							
+								<script language="javascript">
+									var status = "进行中";
+									if(status == "进行中" ){
+										currentPackID = "OF002018051100378807";
+										currentPackStatus = status;
+										currentPackName = "包件01-废钢屑";
+										currentPackPayType = "单价";
+									}
+								</script>
+							
+						
+						<table id="tabPack" cellspacing="2" cellpadding="0" border="0" width="100%">
+						</table>
+						<ul class="bidList" id="packListUlId"><li class="listHead"><span class="col1">名称</span><span class="col2">状态</span></li><li class="listOdd" title="包件01-废钢屑"><span class="col1"><input id="radio_pack_id" name="radio_pack" value="OF002018051100378807" onclick="pack_option(this);" checked="checked" type="radio">包件01-废钢屑</span>	<span class="col2" id="OF002018051100378807Span">进行中</span></li></ul>
+					</ul>
+				</div>
+			</div>
+			
+			
+			<script type="text/javascript">loginType = "outer";</script>
+			<div class="room_signIn_supplier">
+				<div class="title">
+					<a class="title_a">签到信息</a>
+				</div>
+				<div class="supplierSignIn contents" id="signNoDiv" style="display: none;">
+					
+					<div class="state WAIT" id="_state_wait">
+						签到状态：未签到
+					</div>
+					<div class="tips" id="friendlyTipId">
+						友情提示：请及时签到，以免耽误您参与该包件竞价
+					</div>
+					<div class="button">
+						<input value="签到" class="buttonOne" id="qdbj" onclick="qdPack();" type="button">
+					</div>
+				</div>
+				
+				<div class="supplierSignIn contents" id="signYesDiv" style="">
+					<div class="state WAIT" style="height: 50px;line-height: 50px;margin-top:20px;">签到状态：已签到</div>
+					<div class="state WAIT" style="height: 30px;line-height: 30px;margin-bottom:20px;" id="signNumberAlreadyDiv">竞价牌号：&nbsp;&nbsp;&nbsp;446&nbsp;&nbsp;</div>
+					<div id="signNumberDiv" class="tips">感谢您的参与</div>
+				</div>
+			</div>
+			
+			
+			<div class="room_netInfos">
+				<div class="title">
+					<a class="title_a">网络状态</a>
+				</div>
+				<div class="netInfos contents">
+					<font style="font-size: 13px" id="netStatusTime"></font>
+					<img alt="" src="%E7%AB%9E%E4%BB%B7%E5%AE%A4%E6%A0%B7%E5%BC%8F%E9%A1%B5%E9%9D%A2_files/3green.gif" id="netStatus">
+				</div>
+			</div>
+		</div>
+		<div id="roomR" class="roomR">
+			<iframe name="external" id="external" style="width: 100%; height: 698px; z-index: 100; border: medium none;" src="%E7%AB%9E%E4%BB%B7%E5%AE%A4%E6%A0%B7%E5%BC%8F%E9%A1%B5%E9%9D%A2_files/bidRoomMainSoloOutter.html" frameborder="none"></iframe>
+		</div>
+		<div class="clearAll">
+		</div>
+	</div>
+	
+	<div class="bidRoomBottom">
+	</div>
+</div>
+<div id="mydiv" style="position: absolute; visibility: visible; z-index: 1; display: none;">
+<table cellspacing="0" height="34" border="0" width="202">
+<tbody><tr><td><div align="center"><img src="%E7%AB%9E%E4%BB%B7%E5%AE%A4%E6%A0%B7%E5%BC%8F%E9%A1%B5%E9%9D%A2_files/wait.gif" height="34" width="202"></div></td></tr>
+</tbody></table></div>
+
+
+<script type="text/javascript">
+var Project_Count = 0;		//竞标室项目数量
+
+var currentPackID = "";		//当前开启包件id
+var currentPackStatus = "";//当前开启包件状态
+//var currentPackPayType = "";//当前开启包件竞价模式
+var currentPackName = "";	//当前开启包件名称
+
+var bidder_hereor = "";		//厂商牌号
+var bidMinBidder = 0;		//最小竞价厂商数量;
+var isHereBidder = 0;		//已经签到厂商数量;
+
+var roomKqbz = 0;	   //房间开启标志
+var projKqbz = 0;	   //项目开启标志
+var packKqbz = 0;		//包件开启标志
+var intervalID;			//倒计时IntervalID
+
+function getIframe()
+{
+	var objIFrame = "external";
+	//objIFramae为iframe的name和id(二者一样)
+	//return document.frames[objIFrame].document ;
+	return document.getElementById(objIFrame).contentWindow;
+}
+
+var startT = new Date();
+var startTime = startT.getTime();
+var back = false;
+
+
+function init(){
+	dwr.engine.setActiveReverseAjax(true);
+	bidRoom.init(roomID,roomName,roomStatus);
+	if(roomStatus == "启动"){
+		OpenRoomSuccess("");	//开启竞标室
+	}
+	initProj(currentProjID);
+
+	bidRoom.isConnect(new Date().getTime(),function (b){
+		back = b;
+	});
+	intervalID = setInterval(function() {
+		if(projKqbz == 0){
+			window.clearInterval(intervalID);
+		}
+		if(back){
+			back = false;
+		}else{
+			//$('netStatus').src = '/images/images/red.gif';
+			bidRoom.isConnect(new Date().getTime(),function (b){
+				back = b;
+			});
+		}
+	}, 5000);
+}
+function callBack(startTime){
+	
+	var endTime = new Date().getTime();
+	var startTime = startTime;
+	var connectionTime =  endTime - startTime ; 
+	if(connectionTime<100)
+		$('netStatus').src = '/images/images/3green.gif';
+	else if(connectionTime<200&&100<=connectionTime)
+		$('netStatus').src = '/images/images/2green.gif';
+	else if(connectionTime<500&&200<=connectionTime)
+		$('netStatus').src = '/images/images/1green.gif';
+	else
+		$('netStatus').src = '/images/images/red.gif';
+}
+///*------------------------------------------------初始化页面状态---------------------------------------------*/
+//初始化项目
+function initProj(projID){
+	if(projID == null || projID == "")return false;
+	
+	//删除原表格信息
+	if(!deletePackTable())return false;
+	//显示包件信息 dwr调用
+	if(loginUnitType == "03"){
+		bidRoom.getPacksByProjBidder(projID,loginUnitCode,showPackage);
+	}else{
+		bidRoom.getPacksFromProj(projID,showPackage);
+	}
+	roomKqbz = 1;		//竞价室开启标志置为1;
+	//开启项目
+	openProjSuccess(roomID,projID,currentProjName,currentProjBidType);
+	return true;
+	
+}
+//显示包件信息
+function showPackage(Data){
+	for(var i=0;i<Data.length;i++){
+		var pack = Data[i];
+		//包件信息添加到表格
+		addPackToTable(pack.packID,pack.packName,pack.status);
+	}
+	if(currentProjID==null || currentProjID==""){
+		closeRadio("radio_pack",true);
+	}else{
+		closeRadio("radio_pack",false);
+	}
+	initPack(currentPackID);
+}
+//初始化包件
+function initPack(packID){
+	if(packID == null || packID == "")return false;
+	var radioPack = document.getElementsByName("radio_pack");
+	for(var i = 0 ;i<radioPack.length;i++){
+		if(radioPack[i].value == packID){
+			radioPack[i].click();
+			if(currentPackStatus == "进行中"){
+				openPackSuccess(packID,currentProjID,currentPackName,currentPackPayType,"已开启");
+			}else if(currentPackStatus == "招标暂停"){
+				pausePackSuccess(packID,currentProjID,"已暂停");
+			}
+		}
+	}
+}
+///*-----------------------------------------竞标室------------------------------------------------------*/
+//房间按钮操作
+function but_room_option(obj){
+	if(roomKqbz == 0){//如果竞标室开启标志为0，打开竞标室
+		if(confirm("确定要开启竞标室吗?")){
+			openRoom();
+		}
+	}else{//否则关闭
+		if(confirm("确定要关闭竞标室吗?")){
+			closeRoom();
+			//window.close();
+		}
+	}
+}
+//开启竞标室
+function openRoom(){
+	checkwaitProj();//等待图片显示
+	bidRoom.openBidRoom(roomID);
+}
+//关闭竞标室
+function closeRoom(){
+	bidRoom.closeBidRoom(roomID);
+}
+//关闭竞标室成功
+function closeRoomSuccess(projID){
+	window.close();
+}
+//关闭竞标室失败
+function closeRoomFaild(){
+	alert("关闭失败!");
+}
+//开启竞标室成功
+function OpenRoomSuccess(projID){		
+	roomKqbz = 1;		//竞价室开启标志置为1;
+	
+	/*$("chooseProj").style.display = "none";
+	showButton("room_but");
+	$("room_but").value = "关闭竞标室";
+	
+	//删除项目按钮影藏
+	$("deletexm").style.display="none";
+	//开启项目按钮显示
+	$("openxm").style.display="";*/
+	//等待图片隐藏
+	waitOver();
+}
+//开启竞标室失败
+function OpenRoomFaild(){
+	//等待图片隐藏
+	waitOver();
+	alert("开启竞标室失败!");
+}
+///*-----------------------------------------项目------------------------------------------------------*/
+//项目radio点击操作
+function proj_option(obj){
+	//alert(obj.value);
+	//删除原表格信息
+	if(!deletePackTable())return false;
+	//显示包件信息 dwr调用
+	if(loginUnitType == "03"){
+		bidRoom.getPacksByProjBidder(obj.value,loginUnitCode,showPackage);
+	}else{
+		bidRoom.getPacksFromProj(obj.value,showPackage);
+	}
+}
+//开启项目
+function openProj(){
+	if(!roomKqbz){
+		alert("竞标室未开启,不能开启项目");
+		return false;
+	}
+	var projID = checkRadioProj("radio_proj");
+	if(projID==false){
+		alert("请先选择要开启的项目");
+		return false;
+	}
+	if(!confirm("确定要开启项目吗?"))return false;
+	checkwaitProj();//等待图片显示
+	bidRoom.openProject(roomID,projID);
+}
+//开启项目成功
+function openProjSuccess(roomID,projID,projName,bidType){
+	
+	//权限控制
+	//checkLoginRight();
+	//信息提醒
+	projIsOpen(projID,projName,bidType);
+	//等待图片隐藏
+	waitOver();
+}
+/**
+ * 项目开启 群发
+ * 对于供应商：
+ * 显示pMsg，提示项目开启，等待 包件开启
+ * 
+ * */
+function projIsOpen(projID,projName,bidType){
+	
+	currentProjID = projID;
+	currentProjName = projName;
+	currentProjBidType = bidType;
+	//项目开启标志置1
+	projKqbz = 1;
+	//改变项目状态
+	//$(projID+"Span").innerHTML = "已开启";
+	//如果登录用户类型不是路外用户(03)，显示包件信息控制栏(标签栏)	
+	var v = getIframe();
+	v.document.getElementById('pMsg').innerHTML = "项目<span style='color:#3399FF;'>"+currentProjName+"</span>已经开启,请等待包件开启...<br/><br/>请点击包件查看详细信息";
+//	$("pMsg").innerHTML = "项目<span style='color:#3399FF;'>"+currentProjName+"</span>已经开启,请等待包件开启...<br/><br/>请点击包件查看详细信息";
+	var radioPack = document.getElementsByName("radio_pack");
+	Pause(this,500);    
+	this.NextStep=function(){    
+		radioPack[0].click();   
+	};
+//	radioPack[0].click();  
+//	eval('radioPack[0].click()');
+//	var p = getPack();
+//	eval("v.document.getElementsByName('radio_pack')[0].click()");
+	
+}
+function getPack(){
+//	alert("初始状态选择第一个包件，可以点击查看其他包件");
+	return  document.getElementsByName("radio_pack")[0];
+}
+
+function projIsClose(projID){
+	projKqbz = 0;	
+	Pause(this,2000);    
+	this.NextStep=function(){ 
+		$('bidRoomContentsId').innerHTML = "项目已关闭，请退出";
+	};
+}
+//项目关闭 群发
+function projIsClose_older(projID){
+	currentProjID = "";
+	currentProjStatus = "";
+	//项目开启标志置0
+	projKqbz = 0;
+	//改变项目状态
+	$(projID+"Span").innerHTML = "已关闭";
+	//项目radio可用
+	closeRadio("radio_proj",false);
+	//包件radio不可用
+	closeRadio("radio_pack",true);
+	
+	//隐藏包件信息控制栏(标签栏)
+	hidButton("tab_info");
+	
+	$("pMsg").innerHTML = "项目已经关闭";
+	$("HereOrMsg").innerHTML = "";
+	hidButton("waitTimeShowDiv");		//倒计时隐藏
+	//window.location.reload();
+}
+//开启项目失败
+function openProjFailed(){
+	//等待图片隐藏
+	waitOver();
+	alert("开启项目失败!");
+}
+//关闭项目
+function closeProj(){
+	var projID = checkRadioProj("radio_proj");
+	if(projID==false){
+		alert("请先选择要关闭的项目");
+		return false;
+	}
+	if(!confirm("确定要关闭项目吗?"))return false;
+	checkwaitProj();//等待图片显示
+	bidRoom.closeProject(roomID,projID);
+}
+//关闭项目成功
+function closeProjSuccess(roomID,projID,projStatus){
+	//信息
+	projIsClose(projID);
+	//等待图片隐藏
+	waitOver();
+}
+//关闭项目失败
+function closeProjFailed(){
+	//等待图片隐藏
+	waitOver();
+	alert("关闭项目失败!");
+}
+///*------------------------------------------------包件操作---------------------------------------------*/
+function addPackToTable(packID,packName,packStatus){	
+	var packList = $('packListUlId');
+	var cont = packList.innerHTML;
+	cont += '<li class="listOdd" title="'+packName+'"><span class="col1"><input type="radio" id="radio_pack_id" name="radio_pack" value='+packID+' onClick="pack_option(this);"/>'+packName+'</span>	<span class="col2"  id="'+packID+'Span">	'+packStatus+'	</span></li>';
+	packList.innerHTML = cont;
+}
+//删除包件表格信息
+function deletePackTable(){
+	var packList = $('packListUlId');
+	packList.innerHTML = '<li class="listHead"><span class="col1">名称</span><span class="col2">状态</span></li>';
+	return true;
+}
+
+//包件开启
+function openPack(){
+	if(projKqbz == 0){
+		alert("项目尚未开启,不能开启包件");
+		return false;
+	}
+	var packID = checkRadioProj("radio_pack");
+	if(packID==false){
+		alert("请先选择要开启的包件");
+		return false;
+	}
+	//取得项目id
+	var projID = checkRadioProj("radio_proj");
+	//alert("ProjID:"+projID);
+	//alert("PackID:"+packID);
+	if(isHereBidder<bidMinBidder){
+		alert("该包件最小竞价厂商数量为"+bidMinBidder+"家,已经签到的厂商数量为"+isHereBidder+"家,不满足竞价条件,不能开启包件.");
+		return false;
+	}
+	if(!confirm("确定要开启包件吗?"))return false;
+	//等待图片 显示
+	checkwaitPack();
+	bidRoom.openPackage(roomID,projID,packID);
+}
+//开启包件成功
+function openPackSuccess(packID,projID,packName,payType,packStatus){
+	/*//开启包件 按钮隐藏
+	$("openbj").style.display = "none";
+	//关闭包件,暂停包件 按钮显示
+	$("closebj").style.display = "";
+	$("pausebj").style.display = "";*/
+	//当前包件赋值
+	
+	currentPackID = packID;
+    currentPackStatus = packStatus;
+	currentPackPayType = payType;
+	//更新报价模式
+	currentPackName = packName;
+	
+	$(packID+"Span").innerHTML = packStatus;
+	//权限控制
+	checkLoginRight();
+	//信息
+	packIsOpen(packID,packName,payType);
+	//等待图片隐藏
+	waitOver();
+}
+//开启包件失败
+function openPackFalied(){
+	//等待图片隐藏
+	waitOver();
+	alert("开启包件失败!");
+}
+//关闭包件
+function closePack(){
+	//项目id
+	var projID = checkRadioProj("radio_proj");
+	if(projID==false){
+		alert("项目为空,异常");
+		return false;
+	}
+	//包件id
+	var packID = checkRadioProj("radio_pack");
+	if(packID==false){
+		alert("包件为空,异常");
+		return false;
+	}
+	if(!confirm("确定要关闭包件吗?"))return false;
+	//等待图片 显示
+	checkwaitPack();
+	bidRoom.closePackage(roomID,projID,packID);
+}
+//关闭包件成功
+function closePackSuccess(packID,projID,packStatus){
+	//改变包件状态
+	$(packID+"Span").innerHTML = packStatus;
+	//信息
+	packIsClose(packID,"已关闭");
+	//等待图片隐藏
+	waitOver();
+}
+//关闭包件失败
+function closePackFailed(){
+	//等待图片隐藏
+	waitOver();
+	alert("关闭包件失败!");
+}
+//包件radio点击操作 获取牌号
+function pack_option(obj){
+	//项目ID
+	var projID = currentProjID;
+	checkwaitPack();						//显示等待图片
+	//获取供应商购与该包件关联的牌号
+	jumpto("jsp/bid_Competition/bid2.0/Testing.jsp");
+	bidRoom.getHereOr(projID,obj.value,loginUnitCode);
+	if(loginType=="inner"){
+		getBidder_info();
+	}  
+	
+	
+}
+//更新包件状态
+function updaPackStatus(status){
+	var packID = checkRadioProj("radio_pack");
+	//改变包件状态
+//	getIframe().document.getElementById(packID+'Span').innerHTML = status;
+	currentPackStatus = status;
+	$(packID+"Span").innerHTML = status;
+	//如果进行中  显示竞价页面  否则  还原页面
+	if("进行中"==status){
+		currentPackID = packID;
+		getBidPage(loginUnitType);
+	}else{
+//		showButton("divMsg");	//显示信息Div(整个信息区,包含所有信息显示区域);
+		getIframe().document.getElementById('divMsg').style.display='';//显示信息Div(整个信息区,包含所有信息显示区域);
+//		var iObj = document.getElementById('external').contentWindow;
+		var iObj = getIframe();
+		iObj.document.getElementById('pMsg').innerHTML = "包件状态：<span style='color:#0033FF;'>"+status+"</span>";
+		
+		if("流标"==status){
+			iObj.document.getElementById('pMsg').innerHTML = "包件状态：<span style='color:#0033FF;'>"+status+"</span><br/></br>流标原因：购包人数少于最低购包人数，或者无人报价";
+			getIframe().document.getElementById('HereOrMsg').style.display='none';//隐藏divMsg下的HereOrMsg,该区域为了显示签到信息
+//			hidButton("HereOrMsg");	//隐藏divMsg下的HereOrMsg,该区域为了显示签到信息
+		}else{
+			getIframe().document.getElementById('HereOrMsg').style.display='';
+//			showButton("HereOrMsg");
+		}
+//		hidButton("divPage");	//隐藏竞价页面(此页面与divMsg平级);
+//		hidButton('external');
+//		hidButton("package_bidder_info");	//隐藏package_bidder_info(此区域与divMsg平级),该区域为了显示供应商报价提示信息
+	}
+	waitOver();			//隐藏等待图片;
+}
+//获取牌号成功
+function getHereOrSuccess(res,packName,waitTime){
+	waitOver();			//隐藏等待图片;
+	if(null != waitTime){//包件状态非“进行中”
+		getIframe().document.getElementById('waitTime').value = waitTime;
+		if(currentPackStatus == "结束"){
+			getIframe().document.getElementById("pMsg").innerHTML = "包件结束";
+		}else if(currentPackStatus == "流标"){
+			return;
+		}else{
+			Pause(this,10);    
+			this.NextStep=function(){    
+				countDown();					//包件开启倒计时
+			} ; 
+		}
+		//alert("waitTime:"+getIframe().document.getElementById('waitTime').value);
+	}else{
+		
+	}
+	$('signNoDiv').style.display = "none";	
+	$('signYesDiv').style.display = "";
+	$('signNumberAlreadyDiv').innerHTML ="竞价牌号：&nbsp;&nbsp;&nbsp;"+ res + "&nbsp;&nbsp;";
+//	$('signNumberDiv').innerHTML ="感谢您的参与";
+}
+//获取牌号失败 重新获取牌号
+function getHereOrFailed(packName,waitTime){
+	waitOver();			//隐藏等待图片;
+	getIframe().document.getElementById('waitTime').value = waitTime;
+	countDown();					//包件开启倒计时
+	if(loginUnitType!="03"){
+		return false;
+	}
+	$('signNoDiv').style.display = "";
+	$('_state_wait').style.display = "";
+	$('friendlyTipId').innerHTML = "友情提示：请及时签到，以免耽误您参与该包件竞价";
+	$('qdbj').style.display = '';
+	$('signYesDiv').style.display = "none";
+}
+//未登录,签到失败.
+function getHere_noLogined(){
+	waitOver();			//隐藏等待图片;
+	if(loginUnitType!="03"){
+		return false;
+	}
+	$('signNoDiv').style.display = "";
+	$('_state_wait').style.display = "none";
+	$('friendlyTipId').innerHTML = "账号已注销，请重新登录!";
+	$('qdbj').style.display = 'none';
+	$('signYesDiv').style.display = "none";
+}
+//包件流标
+function packIsLb(packName,waitTime){
+	waitOver();			//隐藏等待图片;
+//	$('waitTime').value = waitTime;
+//	countDown();					//包件开启倒计时
+ 	if(loginType == "outer"){
+		$('signNoDiv').style.display = 'none';
+		$('signYesDiv').style.display = 'none';
+ 	}		
+}
+//显示包件信息/供应商信息
+function showInfo(obj,V,V1,V2){
+	obj.style.backgroundColor="#99CCFF";
+	$(V).style.display = "";
+	$(V1).style.display = "none";
+	$(V2).style.backgroundColor = "";
+}
+//获取供应商信息
+function getBidder_info(){
+	var packID = checkRadioProj("radio_pack");
+	if(packID==false){
+		alert("请选择要查看的包件");
+//		$("pack_info").click();
+		return false;
+	}
+	var projID = currentProjID;
+	checkwaitPack();						//显示等待图片
+	bidRoom.getPakageBidder(projID,packID,showPackBidder);
+}
+//显示供应商信息
+function showPackBidder(Data){
+	waitOver();
+	var suppliers = "";
+	if(Data.length<1){
+		//suppliers = addBidderToTable("该包件尚无供应商信息.",null);
+		suppliers="该包件尚无供应商信息";
+	}
+	var j = 1;
+	for(var i=0;i<Data.length;i++){
+		var bidder = Data[i];
+		if(j%2==1){
+			suppliers += '<li class="listOdd" title="'+bidder.business_name+'">';
+		}else{
+			suppliers += '<li class="listEven" title="'+bidder.business_name+'">';
+		}
+		var pic = bidder.hereor=='是'?'yes':'no';
+		suppliers += '<span class="col1" onclick="getSupplierDetailInfor(\''+bidder.id+'\')">' + bidder.business_name + '</span><span class="col2"><a class="'+pic+'"></a></span></li>';
+		j = j+1;
+		//包件信息添加到表格
+//		addBidderToTable(bidder.business_name,bidder.hereor);
+	}
+	$('supplierList').innerHTML = '<li class="listHead"><span class="col1">供应商</span><span class="col2">签到</span></li>'+suppliers;
+}
+//获取供应商详细信息
+function getSupplierDetailInfor(supplier_id){
+	bidRoom.getBidderDetailInfor(supplier_id,showBidderInfor);
+}
+function showBidderInfor(data){
+	var detail = null;
+	detail = '<span>供应商：<font id="moreInfo_supplierName">'+data[0].SUP_BUSINESS_NAME+'</font></span>';
+	detail +='<span>企业法人：<font id="moreInfo_contractName">'+data[0].LEGAL_PERSON+'</font></span>';
+	detail +='<span>联系电话：<font id="moreInfo_phone">'+data[0].BUSINESS_PHONE+'</font></span>';
+	detail +='<span>联系地址：<font id="moreInfo_tel">'+data[0].BUSINESS_ADDRESS+'</font></span>';
+	$('supplierMoreInfoDiv').innerHTML = detail;
+}
+//供应商信息添加到表格
+function addBidderToTable(business_name,hereor){
+	
+	var row = $("pack_bidder").insertRow();
+	row.style.backgroundColor='#FFFFFF';
+	
+	var cell = row.insertCell(0);//增加一列放置radio
+	cell.setAttribute("align","right");
+	cell.setAttribute("noWrap","true") ;
+	cell.innerHTML = '<input type="radio" name="radio_bidder" value=0 style="display:none;" />';
+	
+	var cell = row.insertCell(1);//增加一列放置项目名
+	cell.setAttribute("align","center");
+	cell.setAttribute("width","50%") ;
+	cell.innerHTML = business_name;
+	
+	if(hereor==null)return;
+	var cell = row.insertCell(2);//增加一列放置项目状态
+	cell.setAttribute("align","center");
+	cell.setAttribute("noWrap","true") ;
+	cell.setAttribute("width","50%") ;
+	cell.innerHTML = '是否签到:<span style="font-size:12px; color:#99CCFF;">'+hereor+'</span>';
+	
+}
+//删除供应商表格信息
+function deleteBidderTable(){
+	var radioBidder = document.getElementsByName("radio_bidder");
+	//alert(radioPack.length);
+	for(var i =radioBidder.length ; i>0;i--){
+		$("pack_bidder").deleteRow(i-1);
+	}
+	return true;
+	//dwr.util.removeAllRows("radio_pack");
+}
+
+function HereOrIsGet(){
+	/*var radioPack = document.getElementsByName("radio_pack");
+	for(var i = 0 ;i<radioPack.length;i++){
+		if(radioPack[i].checked){
+			//alert("11");
+			radioPack[i].click();
+			//如果供应商信息当前显示,更新之
+			if($('pack_bidder').style.display!="none"){
+				getBidder_info();
+			}
+		}
+	}*/
+	if(loginUnitType!="03"){
+//		$("pack_info").click();
+		var radioPack = document.getElementsByName("radio_pack");
+		Pause(this,10);    
+		this.NextStep=function(){    
+			radioPack[0].click();   
+		};
+	}
+	return false;
+}
+///*------------------------------------------------公用方法---------------------------------------------*/
+//检验有没有选中的项目
+function checkRadioProj(radiName){
+	var radioProj = document.getElementsByName(radiName);
+	for(var i = 0 ;i<radioProj.length;i++){
+		if(radioProj[i].checked){
+			return radioProj[i].value;
+		}
+	}
+	return false;
+}
+//禁用/启用Radio
+function closeRadio(radioName,V){
+	var radioProj = document.getElementsByName(radioName);
+	for(var i = 0 ;i<radioProj.length;i++){
+		radioProj[i].disabled = V;
+	}
+	return true;
+}
+//根据按钮ID显示按钮
+function showButton(buttonID){
+	$(buttonID).style.display = "";
+}
+//根据按钮ID隐藏按钮
+function hidButton(buttonID){
+	$(buttonID).style.display = "none";
+}
+//切换大小
+function switchSysBar(){
+    if (switchPoint.innerText=="7"){
+    	//alert("closed");
+        switchPoint.innerText="8";
+        $("frmTitle").style.display="none";
+        return true;
+	}else{
+		document.getElementById("frmTitle").style.display="table-cell";
+		//switchPoint.innerText="7";
+		//alert("open2");
+		//confirm("Are you sure?");
+		return true;
+	}
+}
+/**---------------------------------------------分割线----------------------------------------------------*/
+//退出竞标室
+function exitRoom(){
+	//if(!confirm("您确定要退出竞标室吗?"))return false;
+	window.close();
+}
+//包件开启 群发
+function packIsOpen(packID,packName,payType){
+	currentPackID = packID;
+	currentPackPayType = payType;
+	currentPackName = packName;
+	getIframe().document.getElementById("pMsg").innerHTML = "包件已经开启,竞标可以开始";
+	var radioPack = document.getElementsByName("radio_pack");
+	for(var i = 0 ;i<radioPack.length;i++){
+		if(radioPack[i].value == packID){
+			radioPack[i].click();
+		}
+	}
+	getBidPage(loginUnitType);
+}
+//包件关闭 群发
+function packIsClose(packID,status){
+	//改变包件状态
+	$(packID+"Span").innerHTML = status;
+	//包件radio可用
+	closeRadio("radio_pack",false);
+	jumpto("jsp/bid_Competition/bid2.0/Testing.jsp");
+	Pause(this,500);    
+	this.NextStep=function(){    
+		getIframe().document.getElementById("pMsg").innerHTML = "项目<span style='color:#3399FF;'>"+currentProjName+"</span>已经开启,请等待包件开启...<br/><br/>请点击包件查看详细信息";
+		//王晓华改动
+		window.open("price.do?method=recordResult&packId="+currentPackID,"","top="+(screen.height-630)/2+",left="+(screen.width-888)/2+",width=930,height=630,toolbar=0,menubar=0,location=0,directories=0,scrollbars=1,status=1,resizable=0");
+		//包件信息置空
+		currentPackID = "";
+	    currentPackStatus = "";
+		currentPackPayType = "";
+		window.location.reload();
+	};  
+}
+//检验登录用户权限
+function checkLoginRight(){
+	return false;
+}
+//转向页面
+function getBidPage(V){
+//	hidButton("divMsg");
+//	showButton("divPage");
+//	showButton("package_bidder_info");
+	var str_mode = "";
+	if(currentPackPayType =="总价"){
+		str_mode = "1";
+	}else if(currentPackPayType =="明细"){
+	}else if(currentPackPayType =="单价"){
+		str_mode = "3";
+	}
+	if(V == "03"){
+		//路外用户
+		if(str_mode == "1")//总价模式 
+			jumpto("jsp/bid_Competition/bid2.0/bidRoomMainOutter.jsp?str_room_id="+roomID+"&str_proj_id="+currentProjID+"&str_pack_id="+currentPackID+"&str_mode="+str_mode+"&timeStamp="+new Date().getTime());
+		if(str_mode == "3")//单价模式 
+			jumpto("jsp/bid_Competition/bid2.0/bidRoomMainSoloOutter.jsp?str_room_id="+roomID+"&str_proj_id="+currentProjID+"&str_pack_id="+currentPackID+"&str_mode="+str_mode+"&timeStamp="+new Date().getTime());
+	}else{
+		//路局用户
+		if(str_mode == "1")//总价模式 
+			jumpto("jsp/bid_Competition/bid2.0/bidRoomMainInner.jsp?str_room_id="+roomID+"&str_proj_id="+currentProjID+"&str_pack_id="+currentPackID+"&str_mode="+str_mode+"&timeStamp="+new Date().getTime());
+		if(str_mode == "3")//单价模式
+			jumpto("jsp/bid_Competition/bid2.0/bidRoomMainSoloInner.jsp?str_room_id="+roomID+"&str_proj_id="+currentProjID+"&str_pack_id="+currentPackID+"&str_mode="+str_mode+"&timeStamp="+new Date().getTime());
+	}
+}
+//隐藏所有按钮  除了业务人员以外 全部隐藏
+function hidAllButton(){
+	hidButton("room_but");
+	hidButton("chooseProj");
+	hidButton("openxm");
+	hidButton("closexm");
+	hidButton("deletexm");
+	hidButton("openbj");
+	hidButton("closebj");
+	hidButton("pausebj");
+	hidButton("continuebj");
+	hidButton("reOpenbj");
+}
+//转到对应页面
+var displaymode=0;
+//if (displaymode==0)
+//document.write(iframecode)
+function jumpto(inputurl){
+	//document.form1.qd.style.visib=false
+	//使按钮变为灰度
+	//document.form1.qd.disabled=true
+	if (document.getElementById&&displaymode==0)
+		document.getElementById("external").src=inputurl;
+	else if (document.all&&displaymode==0)
+		document.all.external.src=inputurl;
+	else{
+		if (!window.win2||win2.closed)
+			win2=window.open(inputurl);
+		//else if win2 already exists
+		else{
+			win2.location=inputurl;
+			win2.focus();
+		}
+	}
+}
+ //等待项目
+ function checkwaitProj()
+ {
+ $("mydiv").style.top = "120";
+ $("mydiv").style.display="block";
+ }
+ //等待包件
+ function checkwaitPack()
+ {
+ $("mydiv").style.top = "320";
+ $("mydiv").style.left = "250";
+ $("mydiv").style.display="";
+ }
+ //结束
+ function waitOver(){
+ 	$("mydiv").style.display="none";
+ }
+ //显示竞价牌号
+function showBidHereor(){
+	//如果竞价牌号不为空 显示牌号
+	if(bidder_hereor!=null && bidder_hereor!=""){
+		$("currentBidHero").innerHTML = bidder_hereor+"号";
+	} 
+}
+//供应商签到
+function qdPack(){
+	var packID = checkRadioProj("radio_pack");
+	var projID = currentProjID;
+	if(packID==false){
+		alert("请先选择包件");
+		return false;
+	}
+	var hereor = Math.ceil(Math.random()*1000)+"";
+	for(var i=0;i<3-hereor.length;i++){
+		hereor = "0"+hereor;
+	}
+	checkwaitPack();						//显示等待图片
+	bidRoom.here(roomID,projID,packID,loginUnitCode,hereor);
+}
+function countDown() {
+	window.clearInterval(intervalID);
+	var waitTimeShowDiv = getIframe().document.getElementById('waitTimeShowDiv');
+	var divMsg = getIframe().document.getElementById('divMsg');
+	var butPack = getIframe().document.getElementById('butPack');
+//	showButton(waitTimeShowDiv);
+	waitTimeShowDiv.style.display="";
+	intervalID = setInterval(function() {
+		var countDown_Pack = getIframe().document.getElementById('waitTime');
+		var countDown_Disp = getIframe().document.getElementById('waitTimeShow');
+		var ss_Pack = countDown_Pack.value;
+		if(ss_Pack > 0)
+		{
+			if(ss_Pack%60==0){//整分钟刷新
+				var radioPack = document.getElementsByName("radio_pack");
+				for(var i = 0 ;i<radioPack.length;i++){
+					if(radioPack[i].checked){
+						radioPack[i].click();
+					}
+				}
+			}
+			countDown_Pack.value = ss_Pack - 1;
+			countDown_Disp.innerHTML = converseTime(ss_Pack - 1);
+		}else if(ss_Pack == "" && currentPackStatus=="就绪"){
+			var radioPack = document.getElementsByName("radio_pack");
+				for(var i = 0 ;i<radioPack.length;i++){
+					if(radioPack[i].checked){
+						//alert("11");
+						radioPack[i].click();
+					}
+				}
+		}
+		else{
+//			hidButton(waitTimeShowDiv);
+			waitTimeShowDiv.style.display="none";
+			divMsg.style.display="none";
+			butPack.style.display = "none";
+			window.clearInterval(intervalID);
+		}
+	}, 1000);
+}
+function converseTime(mySecond){
+	if(mySecond<0){
+		return "包件已结束";
+	}
+	mySecond = parseInt(mySecond);
+	var hour = Math.floor(mySecond/3600);
+	mySecond = mySecond%3600;
+	var minute = Math.floor(mySecond/60);
+	mySecond = mySecond%60;
+	
+	var mytime = "";
+	if(hour>0){
+		mytime = mytime+hour+"小时";
+	}
+	if(minute>0){
+		mytime = mytime+minute+"分钟";
+	}
+	if(mySecond>0){
+		mytime = mytime+mySecond+"秒";
+	}
+	return mytime;
+}
+
+function Pause(obj,iMinSecond){    
+	   if (window.eventList==null) window.eventList=new Array();    
+	   var ind=-1;    
+	   for (var i=0;i<window.eventList.length;i++){    
+	       if (window.eventList[i]==null) {    
+	         window.eventList[i]=obj;    
+	         ind=i;    
+	         break;    
+	        }    
+	    }    
+	   if (ind==-1){    
+	   ind=window.eventList.length;    
+	   window.eventList[ind]=obj;    
+	   }    
+	  setTimeout("GoOn(" + ind + ")",iMinSecond);    
+}    
+function GoOn(ind){    
+  var obj=window.eventList[ind];    
+  window.eventList[ind]=null;    
+  if (obj.NextStep) obj.NextStep();    
+  else obj();    
+}
+fixFrameHeight('0',false);
+</script></body></html>

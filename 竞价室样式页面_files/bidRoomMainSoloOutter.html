@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<!-- base href="http://m.ztwz.com/" -->
+<script type="text/javascript" src="bidRoomMainSoloOutter_data/check.js"></script>
+<script type="text/javascript" src="bidRoomMainSoloOutter_data/price.js"></script>
+<script type="text/javascript" src="bidRoomMainSoloOutter_data/bid.js"></script>
+<script type="text/javascript" src="engine.js"></script>
+<script type="text/javascript" src="util.js"></script>
+<script type="text/javascript" src="bidRoomMainSoloOutter_data/Bid_Competition_2.js"></script>
+<script type="text/javascript" src="bidRoomMainSoloOutter_data/bidRoomBase.js"></script>
+<script type="text/javascript" src="bidRoomBaseFixHeight.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<title>竞价室</title>
+<link href="bidRoom.css" type="text/css" rel="stylesheet">
+
+</head>
+<body style="width:auto;height:auto;overflow: hidden;" onload="init('20100924195110','OF002018051100378805','OF002018051100378807','3');">
+<div id="basePrice" style="display:none">45000</div>
+<div id="inputdiv" class="none"></div>
+<div id="inputdiv2" class="none"></div>
+<bgsound loop="1" id="bgs">
+<input id="mCount" value="OF002018051600382473" type="hidden">
+<input id="dCount" value="1" type="hidden">
+<input id="Mode" value="3" type="hidden">
+	<div class="room_infos">
+		<div class="infos_l">
+			<div class="thePackName">
+				<span class="shortTxt" title="名称" id="packName">包件01-废钢屑</span>
+			</div>
+			<div class="thePriceCtrl">
+				<div class="theTime">
+					<span class="shortTip">剩余时间</span>
+					<span class="shortTxt" id="countDown"><font>00</font>时<font>02</font>分<font>12</font>秒</span>
+					<span style="display:none" id="countDown_counting">132</span>
+				</div>
+				<div class="theCtrl">
+					<span class="fb col1 info">
+						包件最新总价：<font class="curPrice_1" id="currentPrice">51000/1020</font>
+					</span>
+					<span class="fb col2 info">&nbsp;&nbsp;&nbsp;&nbsp;
+						我的总报价：<font class="curPrice_2" id="currentPrice_bidder">0/0</font>
+					</span>
+				</div>
+			</div>
+			<div class="thePriceInfo">
+				<div class="theSoloTips">
+					<!--右侧合计金额为各条物资细目的报价乘以数量之和-->
+					<font class="soloTip">当前报价合计：</font>
+					<font class="theCurTotal" id="packSumPriceId">0</font>
+				</div>
+				<div class="theSoloBtn">
+					<input class="manulPriceButton" value="" onclick="sendPrices();" id="bidBtnId" type="button">
+				</div>
+				<div class="clearAll"></div>
+			</div>
+			<div class="thePriceConfig">
+				<span class="info width33 fl center">报价模式：<font id="bidMode">单价</font></span>
+				<span class="info width33 fl center">单次延时：<font id="bid_postpone" color="red">30</font>秒</span>
+				<span class="info width33 fl center">延时剩余次数：<font id="postponecount" color="red">3</font>次</span>
+			</div>
+			<div class="clearAll"></div>
+		</div>
+		<div class="infos_r">
+			<div class="newPrices">
+				<div class="tabTitle width98">
+					<a id="menuTab1" class="title_a here" onclick="switchMenu(1,2);">报价信息</a>
+					<a id="menuTab2" class="title_a" onclick="switchMenu(2,2);" style="display: none;">价格趋势</a>
+				</div>
+				<div id="tabContents1" class="newPricesLists contents scrollAll">
+					<ul class="bidScrollList" id="messageList"><li class="listEven"><span class="col2"><font>00</font>时<font>00</font>分</span><span class="col1">编号：01 的包件已经开启，祝您竞价成功！</span></li><li class="listOdd"><span class="col2"><font>00</font>时<font>00</font>分</span><span class="col1">编号：OF002018051100378805 的竞价项目开启市场，欢迎大家竞价！</span></li></ul>
+				</div>
+				<div id="tabContents2" class="newPricesLists contents">
+					<font style="font-size: 13px">内容建设中</font>
+				</div>
+			</div>
+		</div>
+		<div class="clearAll">
+		</div>
+	</div>
+	<div id="room_bidLists" class="room_bidLists" style="height: 372px;">
+		<div class="title">
+			<a class="title_a">物资明细</a>
+		</div>
+		<div class="materList contents">
+			<table id="packDetailTab">
+			<tbody><tr classname="tbHead"><td style="display: none;"></td><td width="4%">物资名称</td><td width="4%">规格型号</td><td width="4%">计量单位</td><td width="4%">物资数量</td><td width="4%">交货地点</td><td width="4%">交货条件</td><td width="4%">交货期限</td></tr><tr classname="tbEven" id="OF002018051100378808Row"><td style="display: none;">OF002018051100378808</td><td>废钢屑</td><td></td><td>吨</td><td>50</td><td>无</td><td>无</td><td>无</td></tr><tr classname="tbHead2"><td style="display: none;"></td><td width="4%">起拍单价</td><td width="4%">当前步长</td><td colspan="4" width="20%">快捷输入</td><td width="4%">输入报价</td></tr><tr classname="tbEven2" id="OF002018051100378808Row2"><td style="display: none;"></td><td>900.</td><td id="addUnitOF002018051100378808">10.0元</td><td id="quickBidOF002018051100378808" colspan="4"><span class="TB_quickPrice " onclick="quickDetailBidAction('10','OF002018051100378808')">10  </span><span class="TB_quickPrice " onclick="quickDetailBidAction('20','OF002018051100378808')">20  </span><span class="TB_quickPrice " onclick="quickDetailBidAction('30','OF002018051100378808')">30  </span><span class="TB_quickPrice " onclick="quickDetailBidAction('40','OF002018051100378808')">40  </span><span class="TB_quickPrice " onclick="quickDetailBidAction('50','OF002018051100378808')">50  </span><span class="TB_quickPrice " onclick="quickDetailBidAction('60','OF002018051100378808')">60  </span></td><td><div><input id="detailOF002018051100378808" value="0." class="TB_priceInput" onkeyup="changeDetailPrice();" onchange="changeDetailPrice();" type="text"></div></td></tr></tbody></table>
+		</div>
+	</div>
+	<div class="room_cautions">
+		<div class="title width99">
+			<a class="title_a">项目提示</a>
+		</div>
+		<div class="contents">
+			<font id="memo">局纪委（监察处）提示：参与竞价单位及主办方要严格执行有关规定，严格执行竞价工作程序和竞价工作纪律，杜绝暗箱操作和权钱交易，局纪委将对在竞价过程中出现的违法违纪问题按规定严肃查处。</font>
+		</div>
+	</div>
+
+
+<script type="text/javascript">fixFrameHeight('0',true);</script></body></html>
